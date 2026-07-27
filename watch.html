@@ -114,9 +114,9 @@
 <body>
 
     <div class="player-container">
-        <a href="index.html" class="back-btn">&larr; უკან დაბრუნება</a>
+        <a href="index.html" class="back-btn">&larr; Turkgeo.Ge</a>
         
-        <h1>ჯენტლმენი</h1>
+        <h1>გენიოსი</h1>
         
         <div class="video-box">
             
@@ -124,33 +124,32 @@
             <details class="episodes-dropdown">
                 <summary>სერიები ▾</summary>
                 <div class="episodes-list">
-                    <a href="watch.html?ep=1">დღეს საღამოს</a>
+                    <a href="watch.html?ep=1">29 ივლისს</a>
                      
                 </div>
             </details>
 
-            <div class="player-screen">
-               <iframe src="https://drive.google.com/file/d/1felWL_2L9Scf-6Nz5uodW2265Vwbtx18/preview" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                <div class="player-screen">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/TMBt6I91sQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 8px;"></iframe>
+    </div>
 
-
-            </div>
         </div>
     </div>
 <!-- სერიალის ინფორმაციის ბლოკი (პოსტერი და აღწერა) -->
 <div class="anime-info-box" style="display: flex; gap: 20px; margin-top: 20px; padding: 15px; background: rgba(0,0,0,0.5); border-radius: 10px; align-items: flex-start;">
     
     <!-- პოსტერი -->
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH_MSlPZrdaBCQNw9S7A_hV6sSi1kZBrE4TF3tlHg7f1KsnbzeoWiTS-U_&s=10 images 480×640 pixels" alt="Poster" style="width: 140px; height: 200px; border-radius: 8px; object-fit: cover;">
+    <img src="https://m.media-amazon.com/images/M/MV5BZTk3MTRlYWItOGNiNi00MWJmLTgzOWMtMjg2NjdmMjZjY2Y1XkEyXkFqcGc@._V1_.jpgMV5BZTk3MTRlYWItOGNiNi00MWJmLTgzOWMtMjg2NjdmMjZjY2Y1XkEyXkFqcGc@._V1_.jpg 1,080×1,350 pixels" alt="Poster" style="width: 140px; height: 200px; border-radius: 8px; object-fit: cover;">
     
     <!-- აღწერა -->
     <div class="anime-description" style="color: white;">
         <h3 style="margin-top: 0; color: #ff7f00;">შინაარსი</h3>
         <p style="font-size: 14px; line-height: 1.5;">
-            იუსუფი არის კაცი, რომელიც მუშაობს ღამის ტაქსის მძღოლად, რათა დაზოგოს ფული და თავის საცოლე ჰაზანთან ერთად ბედნიერი ოჯახი შექმნას, ასევე შეიძინოს სასურველი სახლი. თუმცა, ოჯახთან დაკავშირებული მტკივნეული განსაცდელის შემდეგ, იუსუფი შურისძიების დიდ გეგმას ადგენს. მისი სამიზნე დილაა.
+            დევრანი ჯერ კიდევ ადრეულ ბავშვობაში გამოირჩეოდა თანატოლებისგან თავისი არაჩვეულებრივი მათემატიკური აზროვნებით. სანამ სხვა ბავშვები თამაშებით იყვნენ დაკავებულნი, ის უკვე იტაცებდა რიცხვების, ლოგიკისა და აბსტრაქტული ფორმების სამყაროს. მისთვის მათემატიკა არ იყო უბრალოდ სკოლის საგანი — ეს იყო საიდუმლო ენა, რომლითაც სამყაროს წესრიგს ხსნიდა.
         </p>
  <div style="display: flex; gap: 20px; align-items: center; margin-top: 15px;">
     <button onclick="toggleLike()" id="like-btn" style="background: #222; color: #fff; border: 1px solid #44; padding: 6px 12px; border-radius: 6px; cursor: pointer;">
-        👍 <span id="like-count">0</span>
+        👍 <span id="like-count">23</span>
     </button>
     <button onclick="toggleDislike()" id="dislike-btn" style="background: #222; color: #fff; border: 1px solid #44; padding: 6px 12px; border-radius: 6px; cursor: pointer;">
         👎 <span id="dislike-count">0</span>
@@ -212,54 +211,8 @@
         }
     }
 </script>
+
   
     </div>
 
 </div>
-<!-- კომენტარების მთავარი ბლოკი -->
-<div style="width: 100%; margin-top: 30px; padding: 20px; background: #151515; border-radius: 10px; color: #fff; font-family: sans-serif; box-sizing: border-box;">
-    <h3 style="color: #ff7f00; margin-bottom: 15px;">კომენტარები</h3>
-    
-    <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
-        <input type="text" id="user-name" placeholder="შენი სახელი..." style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: #fff; border-radius: 6px; outline: none; box-sizing: border-box;">
-        <textarea id="user-comment" placeholder="დაწერე შენი აზრი სერიალზე..." rows="3" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: #fff; border-radius: 6px; outline: none; resize: none; box-sizing: border-box;"></textarea>
-        <button onclick="addNewComment()" style="background: #ff7f00; color: #fff; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">დაკომენტარება</button>
-    </div>
-
-    <div id="comments-box" style="display: flex; flex-direction: column; gap: 10px;">
-        <div style="background: #222; padding: 12px; border-radius: 6px; border-left: 3px solid #ff7f00;">
-            <strong style="color: #ff7f00; font-size: 14px;">გიორგი</strong>
-            <p style="margin: 5px 0 0 0; font-size: 13px; color: #ccc;">ძალიან მაგარი სერიალია, ველოდები შემდეგ სერიას!</p>
-        </div>
-    </div>
-</div>
-
-<!-- ერთადერთი სკრიპტი ამ გვერდისთვის -->
-<script>
-    function addNewComment() {
-        let nameField = document.getElementById('user-name');
-        let commentField = document.getElementById('user-comment');
-        let box = document.getElementById('comments-box');
-
-        if (nameField.value.trim() === '' || commentField.value.trim() === '') {
-            alert('გთხოვთ შეავსოთ სახელი და კომენტარი!');
-            return;
-        }
-
-        let item = document.createElement('div');
-        item.style.cssText = "background: #222; padding: 12px; border-radius: 6px; border-left: 3px solid #ff7f00;";
-        
-        item.innerHTML = `
-            <strong style="color: #ff7f00; font-size: 14px;">${nameField.value}</strong>
-            <p style="margin: 5px 0 0 0; font-size: 13px; color: #ccc;">${commentField.value}</p>
-        `;
-
-        box.prepend(item);
-        nameField.value = '';
-        commentField.value = '';
-    }
-</script>
-
-
-</body>
-</html>
