@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaxbrother.Ge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0e;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* ჰედერი - კაშკაშა სტაფილოსფერი */
+        header {
+            background: linear-gradient(135deg, #ff6600, #ff8533);
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* მთავარი კონტეინერი */
+        .container {
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        .welcome-text {
+            margin-bottom: 20px;
+        }
+
+        .welcome-text h1 {
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .welcome-text p {
+            font-size: 13px;
+            color: #b0b0b0;
+        }
+
+        /* ანიმეების ბადე (როგორც ვიდეოში) */
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .anime-grid {
+                grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* ანიმეს ბარათი */
+        .anime-card {
+            background-color: #16161d;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid #252530;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+
+        .anime-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6600;
+        }
+
+        /* ოთხკუთხედი სურათის ჩარჩო */
+        .anime-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #22222b;
+        }
+
+        .anime-info {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .anime-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .watch-btn {
+            display: inline-block;
+            background-color: #ff6600;
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+        }
+
+        .watch-btn:hover {
+            background-color: #e55c00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #08080a;
+            color: #666;
+            font-size: 13px;
+            margin-top: 40px;
+            border-top: 1px solid #1a1a22;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Turkgeo.Ge</div>
+        <nav>
+            <ul>
+                <li><a href="#">მთავარი</a></li>
+                <li><a href="#">სერიალები</a></li>
+                <li><a href="#">კონტაქტი</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <div class="welcome-text">
+            <h1>ქართულად ნათარგმნი სერიალები</h1>
+            <p>უყურე საუკეთესო სერიალებს ჩვენს საიტზე.</p>
+        </div>
+
+        <div class="anime-grid">
+            
+            <div class="anime-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH_MSlPZrdaBCQNw9S7A_hV6sSi1kZBrE4TF3tlHg7f1KsnbzeoWiTS-U_&s=10images 480×640 pixels" alt="ჯენტლმენი">
+                <div class="anime-info">
+                    <div class="anime-title">ჯენტლმენი</div>
+                    <a <a href="watch.html" class="watch-btn">ყურება</a>
+
+                </div>
+            </div>
+
+           
+            
+            
+                
+            
+            
+            
+            
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Turkgeo.Ge. ყველა უფლება დაცულია.</p>
+    </footer>
+
+</body>
+</html>
