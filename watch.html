@@ -148,9 +148,118 @@
         <p style="font-size: 14px; line-height: 1.5;">
             იუსუფი არის კაცი, რომელიც მუშაობს ღამის ტაქსის მძღოლად, რათა დაზოგოს ფული და თავის საცოლე ჰაზანთან ერთად ბედნიერი ოჯახი შექმნას, ასევე შეიძინოს სასურველი სახლი. თუმცა, ოჯახთან დაკავშირებული მტკივნეული განსაცდელის შემდეგ, იუსუფი შურისძიების დიდ გეგმას ადგენს. მისი სამიზნე დილაა.
         </p>
+ <div style="display: flex; gap: 20px; align-items: center; margin-top: 15px;">
+    <button onclick="toggleLike()" id="like-btn" style="background: #222; color: #fff; border: 1px solid #44; padding: 6px 12px; border-radius: 6px; cursor: pointer;">
+        👍 <span id="like-count">0</span>
+    </button>
+    <button onclick="toggleDislike()" id="dislike-btn" style="background: #222; color: #fff; border: 1px solid #44; padding: 6px 12px; border-radius: 6px; cursor: pointer;">
+        👎 <span id="dislike-count">0</span>
+    </button>
+</div>
+
+<script>
+    let hasLiked = false;
+    let hasDisliked = false;
+
+    function toggleLike() {
+        let likeSpan = document.getElementById('like-count');
+        let dislikeSpan = document.getElementById('dislike-count');
+        let likeBtn = document.getElementById('like-btn');
+        let dislikeBtn = document.getElementById('dislike-btn');
+
+        if (!hasLiked) {
+            // თუ დისლაიქი ჰქონდა მიცემული, ჯერ მოვხსნათ
+            if (hasDisliked) {
+                dislikeSpan.innerText = parseInt(dislikeSpan.innerText) - 1;
+                hasDisliked = false;
+                dislikeBtn.style.border = "1px solid #44";
+            }
+            // მივუმატოთ ლაიქი
+            likeSpan.innerText = parseInt(likeSpan.innerText) + 1;
+            hasLiked = true;
+            likeBtn.style.border = "2px solid #ff7f00"; // მიმწვანების/მოכתთხერების ეფექტი
+        } else {
+            // თუ უკვე ლაიქი ჰქონდა და თავიდან დააჭირა, მოვხსნათ
+            likeSpan.innerText = parseInt(likeSpan.innerText) - 1;
+            hasLiked = false;
+            likeBtn.style.border = "1px solid #44";
+        }
+    }
+
+    function toggleDislike() {
+        let likeSpan = the = document.getElementById('like-count');
+        let dislikeSpan = document.getElementById('dislike-count');
+        let likeBtn = document.getElementById('like-btn');
+        let dislikeBtn = document.getElementById('dislike-btn');
+
+        if (!hasDisliked) {
+            // თუ ლაიქი ჰქონდა მიცემული, ჯერ მოვხსნათ
+            if (hasLiked) {
+                let lSpan = document.getElementById('like-count');
+                lSpan.innerText = parseInt(lSpan.innerText) - 1;
+                hasLiked = false;
+                likeBtn.style.border = "1px solid #44";
+            }
+            // მივუმატოთ დისლაიქი
+            dislikeSpan.innerText = parseInt(dislikeSpan.innerText) + 1;
+            hasDisliked = true;
+            dislikeBtn.style.border = "2px solid #ff7f00";
+        } else {
+            // თუ უკვე ჰქონდა დისლაიქი და თავიდან დააჭირა, მოვხსნათ
+            dislikeSpan.innerText = parseInt(dislikeSpan.innerText) - 1;
+            hasDisliked = false;
+            dislikeBtn.style.border = "1px solid #44";
+        }
+    }
+</script>
+  
     </div>
 
 </div>
+<!-- კომენტარების მთავარი ბლოკი -->
+<div style="width: 100%; margin-top: 30px; padding: 20px; background: #151515; border-radius: 10px; color: #fff; font-family: sans-serif; box-sizing: border-box;">
+    <h3 style="color: #ff7f00; margin-bottom: 15px;">კომენტარები</h3>
+    
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+        <input type="text" id="user-name" placeholder="შენი სახელი..." style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: #fff; border-radius: 6px; outline: none; box-sizing: border-box;">
+        <textarea id="user-comment" placeholder="დაწერე შენი აზრი სერიალზე..." rows="3" style="width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: #fff; border-radius: 6px; outline: none; resize: none; box-sizing: border-box;"></textarea>
+        <button onclick="addNewComment()" style="background: #ff7f00; color: #fff; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">დაკომენტარება</button>
+    </div>
+
+    <div id="comments-box" style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="background: #222; padding: 12px; border-radius: 6px; border-left: 3px solid #ff7f00;">
+            <strong style="color: #ff7f00; font-size: 14px;">გიორგი</strong>
+            <p style="margin: 5px 0 0 0; font-size: 13px; color: #ccc;">ძალიან მაგარი სერიალია, ველოდები შემდეგ სერიას!</p>
+        </div>
+    </div>
+</div>
+
+<!-- ერთადერთი სკრიპტი ამ გვერდისთვის -->
+<script>
+    function addNewComment() {
+        let nameField = document.getElementById('user-name');
+        let commentField = document.getElementById('user-comment');
+        let box = document.getElementById('comments-box');
+
+        if (nameField.value.trim() === '' || commentField.value.trim() === '') {
+            alert('გთხოვთ შეავსოთ სახელი და კომენტარი!');
+            return;
+        }
+
+        let item = document.createElement('div');
+        item.style.cssText = "background: #222; padding: 12px; border-radius: 6px; border-left: 3px solid #ff7f00;";
+        
+        item.innerHTML = `
+            <strong style="color: #ff7f00; font-size: 14px;">${nameField.value}</strong>
+            <p style="margin: 5px 0 0 0; font-size: 13px; color: #ccc;">${commentField.value}</p>
+        `;
+
+        box.prepend(item);
+        nameField.value = '';
+        commentField.value = '';
+    }
+</script>
+
 
 </body>
 </html>
